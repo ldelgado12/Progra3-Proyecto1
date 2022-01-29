@@ -46,4 +46,22 @@
     width: 225px;
     background-color: #fcde67;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Es usado normalmente para añadir contenido estético a un elemento, usando la propiedad content. */
+/*https://developer.mozilla.org/es/docs/Web/CSS/::before*/
+/*La clase X o Y sera agregada posteriormente al click que se haya hecho y manejado por JS para agregar la clase correspondiente*/
+.x::before {
+    content: '╳';
+    font-size: 100px;
+    color: #030e12;
+}
+
+.o::before {
+    content: '⚪';
+    font-size: 100px;
+    color: #030e12;
 }
