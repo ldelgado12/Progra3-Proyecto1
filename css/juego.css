@@ -1,0 +1,49 @@
+
+/*Flex permite alinear y distribuir espacio en un contenedor, incluso si el tamanio es dinamico o no sabido*/
+/*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+#cuerpoJuego{
+    display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    justify-content: center;
+    color: #030e12;
+}
+
+#contendorJuego{
+    background-color: #fcde67;
+    border-radius: 10px;
+    padding: 45px;
+}
+
+.control{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.reiniciar {
+    cursor: pointer;
+}
+
+.reiniciar:hover{
+    color: #5bccf6;
+}
+
+/*El CSS grid nos permite tener un sistema integrado de dos dimensiones para ordenar nuestro sitio web*/
+/*https://css-tricks.com/snippets/css/complete-guide-grid/*/
+/*fr es una fraccion que puede ser utilizada con CSS GRID.*/
+/*https://css-tricks.com/introduction-fr-css-unit/*/
+#juegoGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    background-color: #5bccf6;
+}
+
+.celda{
+    height: 225px;
+    width: 225px;
+    background-color: #fcde67;
+    cursor: pointer;
+}
