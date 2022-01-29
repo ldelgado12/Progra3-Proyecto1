@@ -1,7 +1,6 @@
 <html>
   <head>
     <title>Pagina principal</title>
-    <link rel="stylesheet" href="/css/index.css">
   </head>
   <style media="screen">
     /* Style the header with a grey background and some padding */
@@ -46,15 +45,6 @@
   float: right;
 }
 
-.container {
-  border-radius: 4px;
-  background-color: #ddd;
-  padding: 10px;
-  border: 2px solid black;
-  text-align: center;
-
-}
-
 .titulo {
   background-color: #f1f1f1;
   text-align: center;
@@ -76,6 +66,10 @@
     float: none;
   }
 
+  .body {
+    background-image: "imagenes/gato.png";
+  }
+
 }
 
 footer {
@@ -83,6 +77,25 @@ footer {
   padding: 3px;
   background-color: DarkSalmon;
   color: white;
+}
+
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  text-align: center;
+}
+
+th, td {
+  padding: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
 }
 
 .container {
@@ -95,74 +108,44 @@ footer {
 
 }
 
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.col-xs-12{
-  position: relative;
-  min-height: 1px;
-  padding: 10px;
-  width: 100%;
-}
 
   </style>
-
-
   <body class="body">
     <div class="header">
       <a href="#default" class="logo">Proyecto 1</a>
       <div class="header-right">
     <a class="active" href="#home">Pagina principal</a>
-    <a href="#juego" src>Jugar</a>
+    <a href="#jugar">Jugar</a>
     <a href="#resultados">Resultados</a>
   </div>
 </div>
 
+<div class="container">
 
-  <h1 class="titulo">Bienvenidos al juego de <strong>El Gato</strong> </h1>
+  <h1>Resultados</h1>
+</br>
 
+  <table class="tabla">
+    <tr>
+      <th>Usuario</th>
+      <th>Resultado</th>
+      <th>Diferencia</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>gano</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Perdio</td>
+      <td>0</td>
+    </tr>
+  </table>
 
-<section class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-
-    <div class="container">
-    <img src="imagenes/gatoBasico.PNG" alt="gato" style="width:50%;" height="50%">
-      <div class="centered">
-
-
-
-          <strong>Jugadores:</strong> 2 </br>
-        <strong>Objetivo:</strong> Unir 3 figuras en línea recta (vertical, horizontal o diagonal)</br>
-    </br>
-        <strong>Turno:</strong></br>
-        - En su turno el jugador escoge una casilla vacía del tablero y coloca su figura en esa casilla.</br>
-        - Termina su turno cuando acaba de dibujar su figura en la casilla.</br>
-        - No se puede: cambiar de figura ni colocar una figura en una casilla ya ocupada por cualquier figura.</br>
-    </br>
-        <strong>Final del Juego:</strong></br>
-        - <strong>GANA</strong> el jugador que logre poner 3 figuras en una línea (vertical, horizontal o diagonal). Se tacha con una línea recta las 3 figuras que forman la línea ganadora.</br>
-        - <strong>EMPATE:</strong> en el caso de que se ocupen todas las casillas y ningún jugador haya realizado una línea recta, se declara empate y se juega una nueva partida.</br>
-
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+</div>
 
 
-
-
-
-  <h3 class="subTitulo">Proyecto 1 Prgramacion 3</h3>
-
-</p>
 
 <footer>
   <p>Author: Luis Delgado<br>
