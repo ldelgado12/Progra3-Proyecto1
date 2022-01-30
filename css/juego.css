@@ -61,7 +61,7 @@
 }
 
 .o::before {
-    content: '⚪';
+    content: '◯';
     font-size: 100px;
-    color: #030e12;
+    color: red;
 }

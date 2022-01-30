@@ -6,6 +6,11 @@ const $celdas = document.querySelectorAll('.celda')
 /*Variables de Juego para controlar el flujo*/
 let estaJugando = true
 let esXSiguiente = true
+let ganador = null
+
+/*Simbolos usados en el CSS::Before*/
+const simboloX = '╳'
+const simboloO = '◯'
 
 /*Funciones para cambiar el estado de la aplicacion*/
 const ejecutarReset = (evento) => {
@@ -38,6 +43,8 @@ const clickEnCelda = (evento) => {
     }
 }
 
+const obtenerSimbolo = (letra) => letra === 'x' ? simboloX : simboloO
+
 const verificarEstadoDelJuego = () => {
     const arribaIzquierda = $celdas[0].classList[2]
     const arribaMedio = $celdas[1].classList[2]
@@ -51,9 +58,17 @@ const verificarEstadoDelJuego = () => {
     console.log(arribaIzquierda, arribaMedio,arribaDerecha, medioIzquierda, medioMedio, medioDerecha, abajoIzquierda, abajoMedio, abajoDerecha)
 
     //Verificar si existe un ganador
-    //en progreso
+    //En caso de que si, se asigna la variable ganadora y se asigna false a "estaJugando" ya que la ejecucion debe terminar.
+    if(arribaIzquierda && arribaIzquierda === arribaMedio && arribaDerecha){
+        estaJugando = false
+        ganador = arribaIzquierda
+        $estatus.innerHTML = `${obtenerSimbolo(ganador)} ha ganado. Felicidades!`
+    }
+    //En progreso funcion para manejar el ganador y logica de demas formas de ganar.
+
 
 }
+
 /*Event Listeners para escuchar los cambios en el DOM*/
 $reiniciar.addEventListener('click', ejecutarReset)
 
