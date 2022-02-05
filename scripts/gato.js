@@ -25,6 +25,7 @@ const obtenerSimbolo = (letra) => letra === 'x' ? simboloX : simboloO
 const ganador = (letra) => {
     estaJugando = false
     $estatus.innerHTML = `${obtenerSimbolo(letra)} ha ganado. Felicidades!`
+    $reiniciar.style.color = '#5bccf6'
 }
 
 const ejecutarReset = () => {
@@ -35,6 +36,7 @@ const ejecutarReset = () => {
         celda.classList.remove('o')
     }
     estaJugando = true
+    $reiniciar.style.color = 'black'
 
 }
 
