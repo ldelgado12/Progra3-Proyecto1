@@ -16,7 +16,7 @@ const simboloO = '◯'
 /*Funciones para cambiar el estado de la aplicacion*/
 
 /*Funciones para cerrar el pop-up*/
-const cerrarPopUp = (evento) => {
+const cerrarPopUp = () => {
     $modal_container.classList.remove('show');
 }
 
