@@ -27,10 +27,10 @@ const ganador = (letra) => {
     $estatus.innerHTML = `${obtenerSimbolo(letra)} ha ganado. Felicidades!`
 }
 
-const ejecutarReset = () =>{
+const ejecutarReset = () => {
     $estatus.innerHTML = `El siguiente es: ${simboloX}`
     esXSiguiente = true
-    for (const celda of $celdas){
+    for (const celda of $celdas) {
         celda.classList.remove('x')
         celda.classList.remove('o')
     }
@@ -40,32 +40,31 @@ const ejecutarReset = () =>{
 
 const clickEnCelda = (evento) => {
     const listaDeClases = evento.target.classList
-    //Obteniendo la ubicacion del click por medio de la clase HTML que agregamos para identificar el click.
-    const localizacion = listaDeClases[1]
 
-
-    //Validar si la clase ya contiene 'X' u 'O' para no agregar dos valores repetidos
-    if(listaDeClases[2]=== 'x' || listaDeClases[2]=== 'o' ){
-      //pop-up de error
-        $modal_container.classList.add('show');
-        return
-    }else{
-        //Agregar el valor del click a la clase basado en la variable booleana "esXSiguiente"
-        if(esXSiguiente){
-            listaDeClases.add('x')
-            //asignando el valor contrario para el siguiente click
-            esXSiguiente = !esXSiguiente
-            //Cambiar jugador en el HTML
-            $estatus.innerHTML = `El siguiente es: ${simboloO}`
-            //Funcion que extraera el status del DOM segun la clase y lo asigna a una variable.
-            verificarEstadoDelJuego()
-        }else{
-            listaDeClases.add('o')
-            esXSiguiente = !esXSiguiente
-            $estatus.innerHTML = `El siguiente es: ${simboloX}` 
-            verificarEstadoDelJuego()
+    if (estaJugando) {
+        //Validar si la clase ya contiene 'X' u 'O' para no agregar dos valores repetidos
+        if (listaDeClases[2] === 'x' || listaDeClases[2] === 'o') {
+            //pop-up de error
+            $modal_container.classList.add('show');
+            return
+        } else {
+            //Agregar el valor del click a la clase basado en la variable booleana "esXSiguiente"
+            if (esXSiguiente) {
+                listaDeClases.add('x')
+                //asignando el valor contrario para el siguiente click
+                esXSiguiente = !esXSiguiente
+                //Cambiar jugador en el HTML
+                $estatus.innerHTML = `El siguiente es: ${simboloO}`
+                //Funcion que extraera el status del DOM segun la clase y lo asigna a una variable.
+                verificarEstadoDelJuego()
+            } else {
+                listaDeClases.add('o')
+                esXSiguiente = !esXSiguiente
+                $estatus.innerHTML = `El siguiente es: ${simboloX}`
+                verificarEstadoDelJuego()
+            }
+            console.log(listaDeClases)
         }
-        console.log(listaDeClases)
     }
 }
 
@@ -79,30 +78,30 @@ const verificarEstadoDelJuego = () => {
     const abajoIzquierda = $celdas[6].classList[2]
     const abajoMedio = $celdas[7].classList[2]
     const abajoDerecha = $celdas[8].classList[2]
-    console.log(arribaIzquierda, arribaMedio,arribaDerecha, medioIzquierda, medioMedio, medioDerecha, abajoIzquierda, abajoMedio, abajoDerecha)
+    console.log(arribaIzquierda, arribaMedio, arribaDerecha, medioIzquierda, medioMedio, medioDerecha, abajoIzquierda, abajoMedio, abajoDerecha)
 
     //Verificar si existe un ganador
     //En caso de que si, se asigna la variable ganadora y se asigna false a "estaJugando" ya que la ejecucion debe terminar.
     //verifica horizontales
-    if(arribaIzquierda != null && arribaIzquierda === arribaMedio && arribaMedio === arribaDerecha){
+    if (arribaIzquierda != null && arribaIzquierda === arribaMedio && arribaMedio === arribaDerecha) {
         ganador(arribaIzquierda)
-    }else if (medioIzquierda != null && medioIzquierda === medioMedio && medioMedio === medioDerecha){
+    } else if (medioIzquierda != null && medioIzquierda === medioMedio && medioMedio === medioDerecha) {
         ganador(medioIzquierda)
-    }else if (abajoIzquierda != null && abajoIzquierda === abajoMedio && abajoMedio === abajoDerecha){
+    } else if (abajoIzquierda != null && abajoIzquierda === abajoMedio && abajoMedio === abajoDerecha) {
         ganador(abajoIzquierda)
     }
     //verifica verticales
-    else if (arribaIzquierda != null && arribaIzquierda === medioIzquierda && medioIzquierda === abajoIzquierda){
+    else if (arribaIzquierda != null && arribaIzquierda === medioIzquierda && medioIzquierda === abajoIzquierda) {
         ganador(arribaIzquierda)
-    } else if (arribaMedio != null && arribaMedio === medioMedio && medioMedio === abajoMedio){
+    } else if (arribaMedio != null && arribaMedio === medioMedio && medioMedio === abajoMedio) {
         ganador(arribaMedio)
-    }else if (arribaDerecha != null && arribaDerecha === medioDerecha && medioDerecha === abajoDerecha){
+    } else if (arribaDerecha != null && arribaDerecha === medioDerecha && medioDerecha === abajoDerecha) {
         ganador(arribaDerecha)
     }
     //verifica horizontales
-    else if (arribaIzquierda != null && arribaIzquierda === medioMedio && medioMedio === abajoDerecha){
+    else if (arribaIzquierda != null && arribaIzquierda === medioMedio && medioMedio === abajoDerecha) {
         ganador(arribaIzquierda)
-    }else if(arribaDerecha != null && arribaDerecha === medioMedio && medioMedio === abajoIzquierda){
+    } else if (arribaDerecha != null && arribaDerecha === medioMedio && medioMedio === abajoIzquierda) {
         ganador(arribaDerecha)
     }
 }
@@ -115,6 +114,6 @@ $close.addEventListener('click', cerrarPopUp)
 
 //La sentencia sentencia for...of ejecuta un bloque de código para cada elemento de un objeto iterable, como lo son: String, Array, objetos similares a array
 //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for...of
-for(const celda of $celdas){
+for (const celda of $celdas) {
     celda.addEventListener('click', clickEnCelda)
 }
