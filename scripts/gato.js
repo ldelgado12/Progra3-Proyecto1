@@ -43,11 +43,14 @@ const clickEnCelda = (evento) => {
             listaDeClases.add('x')
             //asignando el valor contrario para el siguiente click
             esXSiguiente = !esXSiguiente
+            //Cambiar jugador en el HTML
+            $estatus.innerHTML = `El siguiente es: ${simboloO}`
             //Funcion que extraera el status del DOM segun la clase y lo asigna a una variable.
             verificarEstadoDelJuego()
         }else{
             listaDeClases.add('o')
             esXSiguiente = !esXSiguiente
+            $estatus.innerHTML = `El siguiente es: ${simboloX}` 
             verificarEstadoDelJuego()
         }
         console.log(listaDeClases)
