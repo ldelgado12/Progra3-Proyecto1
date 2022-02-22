@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina principal</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/juego.css">
+</head>
+<body class="body">
+  <div class="header">
+    <a href="#default" class="logo">Proyecto 1</a>
+    <div class="header-right">
+      <a href="../index.html">Pagina principal</a>
+      <a class="active" href="/juego.html">Jugar</a>
+    </div>
+  </div>
+  <p>
+  <h1 class="titulo">Bienvenidos al juego de <strong>El Gato</strong> </h1>
+  <div id="cuerpoJuego">
+    <div id="contendorJuego">
+      <div class="control">
+        <div class="estatus">El siguiente es: ╳</div>
+        <div class="reiniciar">Reiniciar</div>
+      </div>
+      <div id='juegoGrid'>
+        <div class="celda arriba-izquierda"></div>
+        <div class="celda arriba-medio"></div>
+        <div class="celda arriba-derecha"></div>
+        <div class="celda medio-izquierda"></div>
+        <div class="celda medio-medio"></div>
+        <div class="celda medio-derecha"></div>
+        <div class="celda abajo-izquierda"></div>
+        <div class="celda abajo-medio"></div>
+        <div class="celda abajo-derecha"></div>
+      </div>
+    </div>
+  </div>
+
+<!-- Pop-up -->
+  <div class="modal-container" id="modal_container">
+    <div class="modal">
+      <h1>Advertencia</h1>
+      <p>
+        Seleccionar un espacio vacio
+      </p>
+      <button id="close">Cerrar</button>
+    </div>
+
+  </div>
+
+  </p>
+  <footer>
+    <p>Author: Joan Esquivel, Luis Delgado<br>
+    </p>
+  </footer>
+  <script src="../scripts/gato.js"></script>
+</body>
+</html>
